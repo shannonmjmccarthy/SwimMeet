@@ -10,6 +10,7 @@ public class Swim {
 		test();
 		competition();
 		test();
+		//test comment for github
 }
 
 	
