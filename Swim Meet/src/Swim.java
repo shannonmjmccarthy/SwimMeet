@@ -11,6 +11,7 @@ public class Swim {
 		competition();
 		test();
 		//test comment for github
+		//test commit for hw on pc
 }
 
 	
