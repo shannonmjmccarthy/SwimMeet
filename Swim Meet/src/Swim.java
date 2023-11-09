@@ -13,6 +13,7 @@ public class Swim {
 		test();
 		lunch();
 		arrival();
+		//second pull accomplished 
 }
 
 	
