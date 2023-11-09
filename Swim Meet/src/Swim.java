@@ -13,6 +13,7 @@ public class Swim {
 		test();
 		lunch();
 		arrival();
+		sortedEvents();
 		//second pull accomplished 
 }
 
@@ -65,6 +66,19 @@ public class Swim {
 			Meet.meet.get(player).setSwimming(rand);
 		}else{
 			Meet.meet.get(player).setSwimming(events);
+		}
+	}
+	private static void sortedEvents() {
+		System.out.println("The events are posted!");
+		System.out.println("You are swimming :");
+		int officialEvents = Meet.meet.get(player).getSwimming();
+		if(officialEvents == 3){
+			System.out.println("100 Back, 100 Fly, 200 I.M., 200 Medley Relay");	
+		}else if(officialEvents == 2){
+			System.out.println("200 Free, 500 Free, 400 Freelay, 200 Freelay");
+			System.out.println("Jesus, Missy Franklen, ");
+		}else {
+			System.out.println("50 Free, 100 Free, 200 Medley Relay, 200 Freelay");
 		}
 	}
 
