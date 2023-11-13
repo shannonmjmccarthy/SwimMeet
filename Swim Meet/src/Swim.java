@@ -8,12 +8,11 @@ public class Swim {
 	public static void main(String[] args) {
 		Meet.fillMeet();
 		intro();
-		//lunch();
-		//arrival();
 		test();
 		lunch();
 		arrival();
 		sortedEvents();
+		calc();
 		//second pull accomplished 
 }
 
@@ -73,13 +72,20 @@ public class Swim {
 		System.out.println("You are swimming :");
 		int officialEvents = Meet.meet.get(player).getSwimming();
 		if(officialEvents == 3){
-			System.out.println("100 Back, 100 Fly, 200 I.M., 200 Medley Relay");	
+			System.out.println("100 Back, 200 I.M. ");	
+			System.out.println("You are swimming against Jack Sparrow and Alex");
 		}else if(officialEvents == 2){
-			System.out.println("200 Free, 500 Free, 400 Freelay, 200 Freelay");
-			System.out.println("Jesus, Missy Franklen, ");
+			System.out.println("200 Free, 500 Free ");
+			System.out.println("You are swimming agianst Jesus and Missy Franklen ");
 		}else {
-			System.out.println("50 Free, 100 Free, 200 Medley Relay, 200 Freelay");
+			System.out.println("50 Free, 100 Free");
+			System.out.println("You are Swimming against Adam Sandler and Oprah");
 		}
+	}
+	private static void calc() {
+		//compare results and build a table
+		
+		//Meet.meet.get(player)
 	}
 
 }
