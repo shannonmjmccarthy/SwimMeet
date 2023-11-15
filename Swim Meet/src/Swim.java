@@ -5,6 +5,7 @@ public class Swim {
 	static int ready;
 	static String name;
 	static int player;
+	static int officialEvents;
 	public static void main(String[] args) {
 		Meet.fillMeet();
 		intro();
@@ -70,9 +71,9 @@ public class Swim {
 	private static void sortedEvents() {
 		System.out.println("The events are posted!");
 		System.out.println("You are swimming :");
-		int officialEvents = Meet.meet.get(player).getSwimming();
+		 officialEvents = Meet.meet.get(player).getSwimming();
 		if(officialEvents == 3){
-			System.out.println("100 Back, 200 I.M. ");	
+			System.out.println("100 Back, 200 I.M.");	
 			System.out.println("You are swimming against Jack Sparrow and Alex");
 		}else if(officialEvents == 2){
 			System.out.println("200 Free, 500 Free ");
@@ -84,9 +85,51 @@ public class Swim {
 	}
 	private static void calc() {
 		//compare results and build a table
-		
+		System.out.println();
+		System.out.println("It is time for your race! The buzzer goes off and you dive in the water.");
 		//Meet.meet.get(player)
+		//Specialty
+		if(officialEvents == 3) {
+		specialty();
+			System.out.println(Meet.meet.get(3).getName());
+			System.out.println(Meet.meet.get(4).getName());
+		}
+		//distance
+		else if(officialEvents == 2) {
+			System.out.println(Meet.meet.get(0).getName());
+			System.out.println(Meet.meet.get(2).getName());
+		}
+		//sprints
+		else if(officialEvents == 1) {
+			System.out.println(Meet.meet.get(1).getName());
+			System.out.println(Meet.meet.get(5).getName());
+		}
+		
+		//so this sorts through and finds the most prepared but i dont know what to do with this
+		int prepMax = 0;
+		for(int i = 0; i < 6; i++) {
+			int check = Meet.meet.get(i).getPrep();
+			if(check > prepMax) {
+			prepMax = check;
+		}
 	}
+		System.out.println(prepMax);
 
+}
+	private static void specialty() {
+		
+		int total = Meet.meet.get(player).getPrep() +  Meet.meet.get(player).getFood();
+		int Jack = Meet.meet.get(4).getPrep() +  Meet.meet.get(4).getFood();
+		int Alex = Meet.meet.get(3).getPrep() +  Meet.meet.get(3).getFood();
+		System.out.println(total);
+		System.out.println(Jack);
+		System.out.println(Alex);
+		
+		if(total > Jack && total > Alex) {
+			System.out.println("You Win!!");
+		}else if(total < Jack && total < Alex) {
+			System.out.println("You Lost!!");
+		}
+	}
 }
 
