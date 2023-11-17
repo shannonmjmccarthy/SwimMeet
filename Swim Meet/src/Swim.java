@@ -11,7 +11,7 @@ public class Swim {
 	public static void main(String[] args) {
 		Meet.fillMeet();
 		intro();
-		test();
+		
 		lunch();
 		arrival();
 		sortedEvents();
@@ -26,8 +26,8 @@ public class Swim {
 		System.out.println("So, " + name + " do you know what day it is?");
 		String answer =  scanner.nextLine();
 		if(answer.equals("yes")) {
-			System.out.println("Good! You have you swimsuit and goggles packed!");
-			System.out.println("You have emailed your coach so you are put in the right events");
+			System.out.println("Good! You have your swimsuit and goggles packed!");
+			
 			ready = 10;
 			
 		}else {
@@ -37,13 +37,10 @@ public class Swim {
 		Meet.meet.add(new Swimmer(name, ready, 0,0,0));
 		player = Meet.meet.size() -1;
 	}
-	private static void test(){
-		System.out.println(Meet.meet.get(player).getPrep());
-		//System.out.println(Meet.meet.get(player).getFood());
-	}
+
 	private static void lunch() {
-		System.out.println("quick question-would you rather have");
-		System.out.println("(press 1) chick fil a (yum), or (press 2) the nourishing lunch mom packed?");
+		System.out.println("Quick question-would you rather have...");
+		System.out.println("(1) Chick-Fil-A (yum), or (2) the nourishing lunch mom packed?");
 		int answer = scanner.nextInt();
 		if(answer==1) {
 			Meet.meet.get(player).setFood(5);
@@ -57,7 +54,7 @@ public class Swim {
 	private static void arrival() {
 		System.out.println("Many hours later...");
 		System.out.println("");
-		System.out.println("It was a long day at school, but its time for your swim meet!");
+		System.out.println("It was a long day at school, but it is time for your swim meet!");
 		System.out.println("What kind of swimmer are you?");
 		System.out.println("(1)Sprinter, (2)Distance or (3)Specialty?");
 		int events = scanner.nextInt();
@@ -98,17 +95,19 @@ public class Swim {
 		
 		System.out.println("You are Swimming against "+Meet.meet.get(player1).getName()+" and "+Meet.meet.get(player2).getName());
 		if(officialEvents == 3) {
-			
+		
 		specialty(player1, player2);
 
 		}
 		//distance
 		else if(officialEvents == 2) {
+			
 			distance(player1, player2);
 
 		}
 		//sprints
 		else if(officialEvents == 1) {
+			
 			sprinter(player1, player2);
 
 		}
@@ -121,7 +120,7 @@ public class Swim {
 			prepMax = check;
 		}
 	}
-		System.out.println(prepMax);
+		
 
 }
 	private static void specialty(int player1, int player2) {
@@ -133,29 +132,29 @@ public class Swim {
 		int currentPlayerBounus = 0;
 		if(Meet.meet.get(player).getEvents() == 3) {
 			currentPlayerBounus = 5;
-			System.out.println("This race is your speciality");
+			System.out.println("This race is your speciality.");
 
 		}
 		
 		int playerOneBounus = 0;
 		if(Meet.meet.get(player1).getEvents() == 3) {
 			playerOneBounus = 5;
-			System.out.println("This race is "+Meet.meet.get(player1).getName()+"'s speciality");
+			System.out.println("This race is "+Meet.meet.get(player1).getName()+"'s speciality.");
 
 		}
 		int playerTwoBounus = 0;
 		if(Meet.meet.get(player2).getEvents() == 3) {
 			playerTwoBounus = 5;
-			System.out.println("This race is "+Meet.meet.get(player2).getName()+"'s speciality");
+			System.out.println("This race is "+Meet.meet.get(player2).getName()+"'s speciality.");
 
 		}
 		
 		int total = Meet.meet.get(player).getPrep() +  Meet.meet.get(player).getFood()+currentPlayerBounus;
 		int playerOneScore = Meet.meet.get(player1).getPrep() +  Meet.meet.get(player1).getFood()+playerOneBounus ;
 		int playerTwoScore = Meet.meet.get(player2).getPrep() +  Meet.meet.get(player2).getFood()+ playerTwoBounus;
-		System.out.println(total);
-		System.out.println(playerOneScore);
-		System.out.println(playerTwoScore);
+		//System.out.println(total);
+		//System.out.println(playerOneScore);
+		//System.out.println(playerTwoScore);
 		
 		
 		results(total, player1, player2, playerOneScore, playerTwoScore);
@@ -166,7 +165,7 @@ public class Swim {
 		
 		int currentPlayerBounus = 0;
 		if(Meet.meet.get(player).getEvents() == 1) {
-			System.out.println("This sprinter race is your speciality");
+			System.out.println("This sprinter race is your speciality.");
 
 			currentPlayerBounus = 5;
 			
@@ -175,21 +174,21 @@ public class Swim {
 		int playerOneBounus = 0;
 		if(Meet.meet.get(player1).getEvents() == 1) {
 			playerOneBounus = 5;
-			System.out.println("This sprinter race is "+Meet.meet.get(player1).getName()+"'s speciality");
+			System.out.println("This sprinter race is "+Meet.meet.get(player1).getName()+"'s speciality.");
 
 		}
 		int playerTwoBounus = 0;
 		if(Meet.meet.get(player2).getEvents() == 1) {
-			System.out.println("This sprinter race is "+Meet.meet.get(player2).getName()+"'s speciality");
+			System.out.println("This sprinter race is "+Meet.meet.get(player2).getName()+"'s speciality.");
 			playerTwoBounus = 5;
 		}
 		
 		int total = Meet.meet.get(player).getPrep() +  Meet.meet.get(player).getFood()+currentPlayerBounus;
 		int playerOneScore = Meet.meet.get(player1).getPrep() +  Meet.meet.get(player1).getFood()+playerOneBounus ;
 		int playerTwoScore = Meet.meet.get(player2).getPrep() +  Meet.meet.get(player2).getFood()+ playerTwoBounus;
-		System.out.println(total);
-		System.out.println(playerOneScore);
-		System.out.println(playerTwoScore);
+		//System.out.println(total);
+		//System.out.println(playerOneScore);
+		//System.out.println(playerTwoScore);
 		
 		
 		results(total, player1, player2, playerOneScore, playerTwoScore);
@@ -203,39 +202,39 @@ public class Swim {
 		int currentPlayerBounus = 0;
 		if(Meet.meet.get(player).getEvents() == 2) {
 			currentPlayerBounus = 5;
-			System.out.println("This distance race is your speciality");
+			System.out.println("This distance race is your speciality.");
 		}
 		
 		int playerOneBounus = 0;
 		if(Meet.meet.get(player1).getEvents() == 2) {
 			playerOneBounus = 5;
-			System.out.println("This distance race is "+Meet.meet.get(player1).getName()+"'s speciality");
+			System.out.println("This distance race is "+Meet.meet.get(player1).getName()+"'s speciality.");
 		}
 		int playerTwoBounus = 0;
 		if(Meet.meet.get(player2).getEvents() == 2) {
 			playerTwoBounus = 5;
-			System.out.println("This distance race is "+Meet.meet.get(player2).getName()+"'s speciality");
+			System.out.println("This distance race is "+Meet.meet.get(player2).getName()+"'s speciality.");
 		}
 		
 		int total = Meet.meet.get(player).getPrep() +  Meet.meet.get(player).getFood()+currentPlayerBounus;
 		int playerOneScore = Meet.meet.get(player1).getPrep() +  Meet.meet.get(player1).getFood()+playerOneBounus ;
 		int playerTwoScore = Meet.meet.get(player2).getPrep() +  Meet.meet.get(player2).getFood()+ playerTwoBounus;
-		System.out.println(total);
-		System.out.println(playerOneScore);
-		System.out.println(playerTwoScore);
+		//System.out.println(total);
+		//System.out.println(playerOneScore);
+		//System.out.println(playerTwoScore);
 		results(total, player1, player2, playerOneScore, playerTwoScore);
 		
 
 	}
 	private static void results(int total, int player1, int player2, int playerOneScore, int playerTwoScore) {
 		if(total > playerOneScore && total > playerTwoScore) {
-			System.out.println("You Won Against Everyone!!");
+			System.out.println("You won against everyone!!");
 		}
 		 if(total < playerOneScore && total < playerTwoScore) {
-			System.out.println("You Lost against Everyone!!");
+			System.out.println("You lost against everyone!!");
 		 }
 		if(total == playerOneScore && total == playerTwoScore) {
-			System.out.println("You Tied with Everyone !!");
+			System.out.println("You tied with everyone !!");
 		}
 		
 		if(total > playerOneScore) {
