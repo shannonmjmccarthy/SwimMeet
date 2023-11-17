@@ -96,11 +96,13 @@ public class Swim {
 		}
 		//distance
 		else if(officialEvents == 2) {
+			distance();
 			System.out.println(Meet.meet.get(0).getName());
 			System.out.println(Meet.meet.get(2).getName());
 		}
 		//sprints
 		else if(officialEvents == 1) {
+			sprinter();
 			System.out.println(Meet.meet.get(1).getName());
 			System.out.println(Meet.meet.get(5).getName());
 		}
@@ -128,6 +130,38 @@ public class Swim {
 		if(total > Jack && total > Alex) {
 			System.out.println("You Win!!");
 		}else if(total < Jack && total < Alex) {
+			System.out.println("You Lost!!");
+		}
+	}
+	
+	private static void sprinter() {
+		
+		int total = Meet.meet.get(player).getPrep() +  Meet.meet.get(player).getFood();
+		int Adam = Meet.meet.get(1).getPrep() +  Meet.meet.get(1).getFood();
+		int Oprah = Meet.meet.get(5).getPrep() +  Meet.meet.get(5).getFood();
+		System.out.println(total);
+		System.out.println(Adam);
+		System.out.println(Oprah);
+		
+		if(total > Oprah && total > Adam) {
+			System.out.println("You Win!!");
+		}else if(total < Oprah && total < Adam) {
+			System.out.println("You Lost!!");
+		}
+	}
+	
+	private static void distance() {
+		
+		int total = Meet.meet.get(player).getPrep() +  Meet.meet.get(player).getFood();
+		int Jesus = Meet.meet.get(0).getPrep() +  Meet.meet.get(0).getFood();
+		int Missy = Meet.meet.get(5).getPrep() +  Meet.meet.get(5).getFood();
+		System.out.println(total);
+		System.out.println(Jesus);
+		System.out.println(Missy);
+		
+		if(total > Jesus && total > Missy) {
+			System.out.println("You Win!!");
+		}else if(total < Jesus && total < Missy) {
 			System.out.println("You Lost!!");
 		}
 	}
